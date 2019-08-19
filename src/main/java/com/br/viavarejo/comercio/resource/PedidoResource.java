@@ -35,7 +35,7 @@ public class PedidoResource {
 	@RequestMapping(value = "/produto", method = RequestMethod.GET)
 	public ResponseEntity<Pedido> getPedido(
 			@RequestParam(value = "id-produto", required = true) Long idProduto, 
-			@RequestParam(value = "qtde-parcelas", required = true) Integer qtdeParcelas) {
+			@RequestParam(value = "qtde-parcelas", required = true) Integer qtdeParcelas) throws Exception {
 		
 		Pedido pedido = this.pedidoService.buildPedido(idProduto, qtdeParcelas);
 		
